@@ -9,5 +9,12 @@ def factorial(n):
         n -= 1  
     return result
 
-f = factorial(int(sys.argv[1]))
-print(f)
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: ./factorial.py <number>")
+    else:
+        try:
+            f = factorial(int(sys.argv[1]))
+            print(f)
+        except ValueError:
+            print("Please provide a valid integer.")
